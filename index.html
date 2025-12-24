@@ -1,0 +1,709 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental Membership Plans | Magnolia Dentistry</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                        secondary: '#0ea5e9'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=modern%20dental%20office%20interior%20with%20comfortable%20patient%20chairs%2C%20natural%20lighting%2C%20clean%20white%20surfaces%2C%20professional%20dental%20equipment%2C%20welcoming%20atmosphere%2C%20soft%20blue%20and%20white%20color%20scheme%2C%20contemporary%20design&width=1920&height=1080&seq=hero001&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .plan-card {
+            transition: all 0.3s ease;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 200px;
+        }
+        
+        .mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="font-['Pacifico'] text-2xl text-primary">logo</div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#" class="text-primary font-medium">Membership Plans</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#" class="text-gray-700 hover:text-primary transition-colors">Contact</a>
+                </nav>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <button class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap">
+                        Book Online
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden w-6 h-6 flex items-center justify-center" id="mobile-menu-btn">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed inset-y-0 left-0 w-64 bg-white shadow-lg md:hidden z-50" id="mobile-menu">
+            <div class="p-4">
+                <div class="flex justify-between items-center mb-8">
+                    <div class="font-['Pacifico'] text-xl text-primary">logo</div>
+                    <button class="w-6 h-6 flex items-center justify-center" id="close-menu-btn">
+                        <i class="ri-close-line text-xl"></i>
+                    </button>
+                </div>
+                <nav class="space-y-4">
+                    <a href="#" class="block text-gray-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="block text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#" class="block text-primary font-medium">Membership Plans</a>
+                    <a href="#" class="block text-gray-700 hover:text-primary transition-colors">About</a>
+                    <a href="#" class="block text-gray-700 hover:text-primary transition-colors">Contact</a>
+                    <button class="w-full bg-primary text-white px-6 py-2 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap mt-4">
+                        Book Online
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative min-h-[600px] flex items-center">
+        <div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Affordable Dental Care for Your Family
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    Skip the insurance hassles. Our membership plans provide comprehensive dental care with transparent pricing, no waiting periods, and immediate benefits for you and your loved ones.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap text-lg font-medium">
+                        View Plans
+                    </button>
+                    <button class="border-2 border-primary text-primary px-8 py-3 !rounded-button hover:bg-primary hover:text-white transition-colors whitespace-nowrap text-lg font-medium">
+                        Book Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Overview -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Choose Your Perfect Plan
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Simple, transparent pricing with no hidden fees. All plans include preventive care and significant savings on treatments.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Individual Plan -->
+                <div class="plan-card bg-white border-2 border-gray-200 rounded-xl p-8 relative">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Individual</h3>
+                        <p class="text-gray-600 mb-4">Perfect for single adults</p>
+                        <div class="text-4xl font-bold text-primary mb-2">$39</div>
+                        <p class="text-gray-500">per month</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">2 Cleanings & Exams</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">Annual X-rays</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">15% off all treatments</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">Emergency exam included</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-primary text-white py-3 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap font-medium">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- Family Plan -->
+                <div class="plan-card bg-primary text-white rounded-xl p-8 relative transform scale-105">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-secondary text-white px-4 py-1 rounded-full text-sm font-medium">Most Popular</span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Additional Family</h3>
+                        <p class="text-blue-100 mb-4">Add family members</p>
+                        <div class="text-4xl font-bold mb-2">$29</div>
+                        <p class="text-blue-100">per additional member</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-300"></i>
+                            </div>
+                            <span>All Individual benefits</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-300"></i>
+                            </div>
+                            <span>Family scheduling priority</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-300"></i>
+                            </div>
+                            <span>20% off family treatments</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-300"></i>
+                            </div>
+                            <span>Flexible payment options</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-white text-primary py-3 !rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap font-medium">
+                        Choose Plan
+                    </button>
+                </div>
+                
+                <!-- Child Plan -->
+                <div class="plan-card bg-white border-2 border-gray-200 rounded-xl p-8 relative">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Child</h3>
+                        <p class="text-gray-600 mb-4">Ages 0-17 years</p>
+                        <div class="text-4xl font-bold text-primary mb-2">$25</div>
+                        <p class="text-gray-500">per month</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">2 Cleanings & Exams</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">Fluoride treatments</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">Sealants included</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </div>
+                            <span class="text-gray-700">25% off orthodontics</span>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-primary text-white py-3 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap font-medium">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Why Choose Our Membership Plans?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience the freedom of quality dental care without the complexity of insurance.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mx-auto mb-4">
+                        <i class="ri-shield-check-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">No Insurance Hassles</h3>
+                    <p class="text-gray-600">Direct payment means no claim forms, no waiting for approvals, and no surprise denials.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mx-auto mb-4">
+                        <i class="ri-calendar-check-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Immediate Benefits</h3>
+                    <p class="text-gray-600">Start using your benefits right away with no waiting periods or annual maximums.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mx-auto mb-4">
+                        <i class="ri-money-dollar-circle-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Transparent Pricing</h3>
+                    <p class="text-gray-600">Know exactly what you'll pay with our clear, upfront pricing structure.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mx-auto mb-4">
+                        <i class="ri-heart-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Family Focused</h3>
+                    <p class="text-gray-600">Designed with families in mind, offering affordable care for every family member.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Comparison -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Complete Plan Comparison
+                </h2>
+                <p class="text-xl text-gray-600">
+                    See exactly what's included in each membership plan
+                </p>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-xl shadow-sm border border-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-4 text-left text-sm font-semibold text-gray-900">Benefits</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold text-gray-900">Individual</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold text-gray-900 bg-primary/5">Additional Family</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold text-gray-900">Child</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-900">Monthly Cost</td>
+                            <td class="px-6 py-4 text-sm text-center font-semibold text-primary">$39</td>
+                            <td class="px-6 py-4 text-sm text-center font-semibold text-primary bg-primary/5">$29</td>
+                            <td class="px-6 py-4 text-sm text-center font-semibold text-primary">$25</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 text-sm text-gray-900">Cleanings per year</td>
+                            <td class="px-6 py-4 text-sm text-center">2</td>
+                            <td class="px-6 py-4 text-sm text-center bg-primary/5">2</td>
+                            <td class="px-6 py-4 text-sm text-center">2</td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-900">Comprehensive Exams</td>
+                            <td class="px-6 py-4 text-sm text-center">2</td>
+                            <td class="px-6 py-4 text-sm text-center bg-primary/5">2</td>
+                            <td class="px-6 py-4 text-sm text-center">2</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 text-sm text-gray-900">X-rays (annual)</td>
+                            <td class="px-6 py-4 text-sm text-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center bg-primary/5">
+                                <i class="ri-check-line text-green-500"></i>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-900">Fluoride Treatments</td>
+                            <td class="px-6 py-4 text-sm text-center">
+                                <i class="ri-close-line text-gray-400"></i>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center bg-primary/5">
+                                <i class="ri-close-line text-gray-400"></i>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 text-sm text-gray-900">Sealants</td>
+                            <td class="px-6 py-4 text-sm text-center">
+                                <i class="ri-close-line text-gray-400"></i>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center bg-primary/5">
+                                <i class="ri-close-line text-gray-400"></i>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-center">
+                                <i class="ri-check-line text-green-500"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 text-sm text-gray-900">Treatment Discount</td>
+                            <td class="px-6 py-4 text-sm text-center">15%</td>
+                            <td class="px-6 py-4 text-sm text-center bg-primary/5">20%</td>
+                            <td class="px-6 py-4 text-sm text-center">15%</td>
+                        </tr>
+                        <tr class="bg-gray-50">
+                            <td class="px-6 py-4 text-sm text-gray-900">Orthodontic Discount</td>
+                            <td class="px-6 py-4 text-sm text-center">10%</td>
+                            <td class="px-6 py-4 text-sm text-center bg-primary/5">15%</td>
+                            <td class="px-6 py-4 text-sm text-center">25%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Get answers to common questions about our membership plans
+                </p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center accordion-btn">
+                        <span class="text-lg font-semibold text-gray-900">How do I sign up for a membership plan?</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-add-line text-xl text-gray-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">You can sign up online through our website, call our office, or visit us in person. Membership benefits begin immediately upon enrollment, and your first payment is due at sign-up.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center accordion-btn">
+                        <span class="text-lg font-semibold text-gray-900">Can I cancel my membership at any time?</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-add-line text-xl text-gray-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">Yes, you can cancel your membership with 30 days written notice. There are no long-term contracts or cancellation fees. Any unused benefits from the current month will be forfeited upon cancellation.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center accordion-btn">
+                        <span class="text-lg font-semibold text-gray-900">What if I need emergency dental care?</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-add-line text-xl text-gray-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">All membership plans include emergency exams at no additional cost. We offer same-day emergency appointments when possible, and any necessary treatment will be discounted according to your membership level.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center accordion-btn">
+                        <span class="text-lg font-semibold text-gray-900">Can I use my membership with insurance?</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-add-line text-xl text-gray-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">Our membership plans are designed as an alternative to traditional insurance. You cannot combine membership benefits with insurance coverage for the same services, but you can use insurance for services not covered by your membership.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl border border-gray-200">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center accordion-btn">
+                        <span class="text-lg font-semibold text-gray-900">How do payment plans work for larger treatments?</span>
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-add-line text-xl text-gray-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">We offer flexible payment plans for treatments over $500. Members receive their membership discount first, then can spread the remaining balance over 6-24 months with 0% interest for qualified patients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-primary">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                Ready to Start Your Dental Membership?
+            </h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Join hundreds of satisfied patients who have discovered the convenience and savings of our membership plans. No waiting periods, no claim forms, just quality dental care.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-primary px-8 py-3 !rounded-button hover:bg-gray-100 transition-colors whitespace-nowrap text-lg font-medium">
+                    Sign Up Now
+                </button>
+                <button class="border-2 border-white text-white px-8 py-3 !rounded-button hover:bg-white hover:text-primary transition-colors whitespace-nowrap text-lg font-medium">
+                    Schedule Consultation
+                </button>
+            </div>
+            
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-blue-100">
+                <div class="flex items-center space-x-2">
+                    <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-phone-line"></i>
+                    </div>
+                    <span>(555) 123-4567</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="w-5 h-5 flex items-center justify-center">
+                        <i class="ri-mail-line"></i>
+                    </div>
+                    <span>info@magnoliadentistry.com</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="font-['Pacifico'] text-2xl text-primary mb-4">logo</div>
+                    <p class="text-gray-400 mb-4">
+                        Providing exceptional dental care with a personal touch. Your smile is our priority.
+                    </p>
+                    <div class="flex space-x-4">
+                        <div class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-facebook-fill"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-instagram-line"></i>
+                        </div>
+                        <div class="w-8 h-8 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors cursor-pointer">
+                            <i class="ri-twitter-line"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Membership Plans</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">General Dentistry</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cosmetic Dentistry</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Orthodontics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Oral Surgery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Emergency Care</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center mt-0.5">
+                                <i class="ri-map-pin-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">123 Dental Street<br>Austin, TX 78701</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-phone-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">(555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-mail-line text-primary"></i>
+                            </div>
+                            <span class="text-gray-400">info@magnoliadentistry.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Magnolia Dentistry. All rights reserved. | Privacy Policy | Terms of Service
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+            
+            closeMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <script id="accordion-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionBtns = document.querySelectorAll('.accordion-btn');
+            
+            accordionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.accordion-icon');
+                    
+                    if (content.classList.contains('active')) {
+                        content.classList.remove('active');
+                        icon.className = 'ri-add-line text-xl text-gray-500 accordion-icon';
+                    } else {
+                        accordionBtns.forEach(otherBtn => {
+                            const otherContent = otherBtn.nextElementSibling;
+                            const otherIcon = otherBtn.querySelector('.accordion-icon');
+                            otherContent.classList.remove('active');
+                            otherIcon.className = 'ri-add-line text-xl text-gray-500 accordion-icon';
+                        });
+                        
+                        content.classList.add('active');
+                        icon.className = 'ri-subtract-line text-xl text-gray-500 accordion-icon';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const viewPlansBtn = document.querySelector('button[class*="View Plans"]');
+            if (viewPlansBtn) {
+                viewPlansBtn.addEventListener('click', function() {
+                    const plansSection = document.querySelector('section:nth-of-type(3)');
+                    if (plansSection) {
+                        plansSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        });
+    </script>
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    window.shareKey = 'ft9Q8tuX0Pv_9Qg7p6TMBw';
+    window.host = 'readdy.ai';
+</script>
+
+</html>
